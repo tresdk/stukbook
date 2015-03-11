@@ -5,9 +5,9 @@
         = gravatar_tag @user.email, size: 200
       .col-md-4
         %h3= @user.username
-        %p Age:
-        %p Gender:
+        %p="Age:#{@user.age}"
+        %p="Gender:#{@user.gender}"
       .col-md-4
         %h3 Who am I
         %small
-          Bio boiewinf ofweioh foiwef weoifj woejf ioewjf woeijnf ijewñfñ wehfñluh l
+          = @user.bio
