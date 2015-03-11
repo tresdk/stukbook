@@ -4,4 +4,5 @@
       =gravatar_tag user.email, size: 200
     .caption
       %h3= user.username
-      %p= action_buttons(user)
+      - if current_user
+        %p= action_buttons(user)
