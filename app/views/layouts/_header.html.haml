@@ -18,6 +18,7 @@
         - if current_user
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              =gravatar_tag current_user.email, size: 20
               =current_user.username              
               %span.caret
             %ul.dropdown-menu{:role => "menu"}
