@@ -11,3 +11,20 @@
         %h3 Who am I
         %small
           = @user.bio
+.container
+  .row
+    .col-md-3
+      / Friend zone
+      .panel.panel-default
+        .panel-heading="Friends #{@user.active_friends.size}"
+        .panel-body
+          - @user.active_friends.last(20).each do |u|
+            =link_to user_path(u.username) do
+              =gravatar_tag u.email, size:40
+    .col-md-6
+      /Post zone
+    .col-md-3
+      /Profile Activity
+      .panel.panel-default
+        .panel-heading Recent Activity
+        .panel-body= render_activities(@activities)
