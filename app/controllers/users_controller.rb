@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     end
   end
   def show
-    @activities = PublicActivity::Activity.where(owner_id: @user.id) + PublicActivity::Activity.where(recipient_id: @user.id)
+    @activities = PublicActivity::Activity.where(owner_id: @user.id).order('created_at DESC')
     @post = Post.new
-    @posts = @user.posts
+    @posts = @user.posts.order('created_at DESC')
   end
   
   private

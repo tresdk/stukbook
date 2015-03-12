@@ -1,0 +1,6 @@
+-if activity.trackable
+  %p
+    =link_to activity.owner.username, user_path(activity.owner.username)
+    posted something
+    = time_ago_in_words(activity.created_at)
+    ago
