@@ -23,6 +23,8 @@
               =gravatar_tag u.email, size:40
     .col-md-6
       /Post zone
+      =render "posts/form"
+      =render @posts
     .col-md-3
       /Profile Activity
       .panel.panel-default

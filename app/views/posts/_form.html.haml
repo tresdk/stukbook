@@ -1,0 +1,8 @@
+= simple_form_for(@post) do |f|
+  .panel.panel-info
+    .panel-heading Post
+    .panel-body
+      = f.error_notification
+      = f.input :content, required: true, label: false, placeholder: "new post content here", class: "form-control"
+    .panel-footer
+      = f.button :submit, class: "btn btn-primary btn-block"
