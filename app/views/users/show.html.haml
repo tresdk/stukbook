@@ -23,7 +23,8 @@
               =gravatar_tag u.email, size:40
     .col-md-6
       /Post zone
-      =render "posts/form"
+      =if current_user && current_user == @user
+        =render "posts/form"
       =render @posts
     .col-md-3
       /Profile Activity
